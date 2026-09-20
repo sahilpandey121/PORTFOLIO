@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0b1016"/>
+  <rect x="14" y="14" width="36" height="36" rx="8" fill="none" stroke="#72f5c6" stroke-width="3"/>
+  <path d="M24 8v10M32 8v10M40 8v10M24 46v10M32 46v10M40 46v10M8 24h10M8 32h10M8 40h10M46 24h10M46 32h10M46 40h10" stroke="#83b7ff" stroke-width="3" stroke-linecap="round"/>
+  <text x="32" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#72f5c6">SP</text>
+</svg>

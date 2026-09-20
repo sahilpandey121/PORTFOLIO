@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sahil Ajay Pandey — semiconductor devices, electronics, fabrication, sensors, embedded systems, FPGA and experimental research portfolio. IISER Bhopal and IIT Madras." />
+  <meta name="keywords" content="Sahil Ajay Pandey, semiconductor, electronics, nanoelectronics, device fabrication, sensors, FPGA, embedded systems, research, IISER Bhopal, IIT Madras" />
+  <meta name="author" content="Sahil Ajay Pandey" />
+  <meta name="theme-color" content="#090b0f" />
+  <meta property="og:title" content="Sahil Ajay Pandey | Semiconductor and Electronics Research" />
+  <meta property="og:description" content="Experimental semiconductor research, electronics, device fabrication, sensors, embedded hardware and FPGA systems." />
+  <meta property="og:type" content="website" />
+  <title>Sahil Ajay Pandey | Semiconductor &amp; Electronics Research</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Click-ripple canvas -->
+  <canvas id="rippleCanvas" aria-hidden="true"></canvas>
+  <!-- Floating particle canvas -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+  <div class="site-noise" aria-hidden="true"></div>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <header class="nav-wrap" id="top">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a href="#home" class="brand" aria-label="Sahil Ajay Pandey home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>Sahil Pandey</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#lab">Lab</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="https://sites.google.com/site/santanutalukderiiscnanoscience/home-1?pli=1&authuser=0"
+           target="_blank" rel="noreferrer" class="nav-lab-link">
+          <span class="lab-dot"></span> SIX SENSE Lab &#8599;
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero section" id="home">
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="dot pulse"></span>
+            Semiconductor &#183; Electronics &#183; Experimental Research
+          </div>
+          <h1>Building hardware that<br><span class="gradient-text" id="heroTypewriter"></span></h1>
+          <p class="hero-text">
+            I am <strong>Sahil Ajay Pandey</strong>, an Engineering Sciences student at
+            <strong>IISER Bhopal</strong> and a B.S. Electronic Systems student at
+            <strong>IIT Madras</strong>, with hands-on research experience spanning
+            semiconductor fabrication, device characterization, sensors, embedded
+            electronics and FPGA systems.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary magnetic" href="#projects">Explore my work <span>&#8600;</span></a>
+            <a class="btn btn-ghost magnetic" href="cv.html" target="_blank" rel="noreferrer">View CV <span>&#8599;</span></a>
+            <a class="btn btn-ghost magnetic" href="mailto:sahilpandey12125@gmail.com">Start a conversation <span>&#8599;</span></a>
+          </div>
+          <div class="hero-meta">
+            <div class="stat-counter"><span>Research experience</span><strong>1.5+ yrs</strong></div>
+            <div class="stat-counter"><span>Primary focus</span><strong>Semiconductor &amp; Electronics</strong></div>
+            <div class="stat-counter"><span>JEE Advanced Rank</span><strong>CRL 6271</strong></div>
+            <div class="stat-counter"><span>Based in</span><strong>India</strong></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1" aria-label="Abstract semiconductor chip illustration">
+          <div class="chip-scene">
+            <div class="circuit-ring ring-1"></div>
+            <div class="circuit-ring ring-2"></div>
+            <div class="orbit-particle op-1"></div>
+            <div class="orbit-particle op-2"></div>
+            <div class="orbit-particle op-3"></div>
+            <div class="chip-shadow"></div>
+            <div class="chip" id="heroChip">
+              <div class="chip-grid"></div>
+              <div class="chip-scanline"></div>
+              <div class="chip-core">
+                <span>SP</span>
+                <small>RESEARCH</small>
+                <div class="chip-pulse"></div>
+              </div>
+              <div class="pin pin-t-1"></div><div class="pin pin-t-2"></div>
+              <div class="pin pin-t-3"></div><div class="pin pin-t-4"></div>
+              <div class="pin pin-b-1"></div><div class="pin pin-b-2"></div>
+              <div class="pin pin-b-3"></div><div class="pin pin-b-4"></div>
+              <div class="pin pin-l-1"></div><div class="pin pin-l-2"></div>
+              <div class="pin pin-l-3"></div><div class="pin pin-l-4"></div>
+              <div class="pin pin-r-1"></div><div class="pin pin-r-2"></div>
+              <div class="pin pin-r-3"></div><div class="pin pin-r-4"></div>
+              <svg class="chip-traces" viewBox="0 0 270 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 135 L70 135 L70 90 L135 90" stroke="rgba(114,245,198,0.18)" stroke-width="1"/>
+                <path d="M240 135 L200 135 L200 90 L135 90" stroke="rgba(131,183,255,0.18)" stroke-width="1"/>
+                <path d="M135 30 L135 70" stroke="rgba(255,209,102,0.18)" stroke-width="1"/>
+                <path d="M135 240 L135 200" stroke="rgba(114,245,198,0.18)" stroke-width="1"/>
+                <circle cx="70" cy="90" r="3" fill="rgba(114,245,198,0.4)"/>
+                <circle cx="200" cy="90" r="3" fill="rgba(131,183,255,0.4)"/>
+              </svg>
+            </div>
+            <div class="floating-tag tag-a">FABRICATION</div>
+            <div class="floating-tag tag-b">CHARACTERIZATION</div>
+            <div class="floating-tag tag-c">HARDWARE</div>
+            <div class="floating-tag tag-d">FPGA</div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue">SCROLL TO EXPLORE <span>&#8595;</span></div>
+    </section>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section class="section section-alt" id="about">
+      <div class="container two-col">
+        <div class="section-heading reveal">
+          <span class="section-number">01</span>
+          <p class="kicker">ABOUT</p>
+          <h2>Curious about how<br><em>devices become systems.</em></h2>
+        </div>
+        <div class="about-copy reveal delay-1">
+          <p class="lead">My work sits at the intersection of <strong>semiconductor devices,
+          electronics and experimental engineering</strong>. I enjoy moving from a physical
+          process or device concept to a measurable, controllable hardware system.</p>
+          <p>In the <strong>SIX SENSE Laboratory at IISER Bhopal</strong>, under
+          Dr.&#160;Santanu Talukdar, I have worked across substrate preparation, lithography,
+          electro-lithography, laser writing, thin-film deposition, sensor fabrication and
+          electrical characterization using a probe station and source-measure unit.</p>
+          <p>I am especially interested in semiconductor devices, nanoelectronics, sensors
+          and MEMS, analog and mixed-signal electronics, embedded hardware, FPGA systems and
+          emerging semiconductor technologies.</p>
+          <div class="about-highlights">
+            <div class="highlight glow-hover"><strong>Fabricate</strong><span>Process &#8594; Device &#8594; Sensor</span></div>
+            <div class="highlight glow-hover"><strong>Measure</strong><span>Probe Station &#8594; SMU &#8594; Data</span></div>
+            <div class="highlight glow-hover"><strong>Build</strong><span>MCU &#8594; FPGA &#8594; Hardware</span></div>
+          </div>
+          <a href="https://sites.google.com/site/santanutalukderiiscnanoscience/home-1?pli=1&authuser=0"
+             target="_blank" rel="noreferrer" class="lab-link-card">
+            <div class="lab-link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+              </svg>
+            </div>
+            <div>
+              <strong>SIX SENSE Nanoscience Laboratory</strong>
+              <span>Dr. Santanu Talukdar &#183; IISER Bhopal &#183; Visit Lab Website &#8599;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ RESEARCH ═══ -->
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="section-number">02</span>
+          <p class="kicker">RESEARCH</p>
+          <h2>From cleanroom processes to<br><em>electronic systems.</em></h2>
+          <p class="section-intro">A broad research profile designed to support work across device physics, fabrication, characterization and hardware implementation.</p>
+        </div>
+        <div class="research-grid">
+
+          <article class="research-card reveal" tabindex="0">
+            <div class="card-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+              </svg>
+            </div>
+            <div class="card-number">01</div>
+            <h3>Semiconductor Devices</h3>
+            <p>Device physics, advanced transistor structures, emerging semiconductor devices, characterization and device-oriented simulation.</p>
+            <div class="pill-row"><span>Device Physics</span><span>TCAD</span><span>VLSI</span></div>
+            <div class="card-glow"></div>
+          </article>
+
+          <article class="research-card reveal delay-1" tabindex="0">
+            <div class="card-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+              </svg>
+            </div>
+            <div class="card-number">02</div>
+            <h3>Fabrication &amp; Processing</h3>
+            <p>Hands-on exposure to substrate preparation, lithography, electro-lithography, laser writing, deposition and sensor fabrication.</p>
+            <div class="pill-row"><span>Lithography</span><span>Deposition</span><span>Process</span></div>
+            <div class="card-glow"></div>
+          </article>
+
+          <article class="research-card reveal delay-2" tabindex="0">
+            <div class="card-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <div class="card-number">03</div>
+            <h3>Characterization &amp; Sensors</h3>
+            <p>Electrical measurements, probe-station work, SMU-based characterization and experimental sensor evaluation.</p>
+            <div class="pill-row"><span>SMU</span><span>Probe Station</span><span>MEMS</span></div>
+            <div class="card-glow"></div>
+          </article>
+
+          <article class="research-card reveal" tabindex="0">
+            <div class="card-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <div class="card-number">04</div>
+            <h3>Electronics &amp; Hardware</h3>
+            <p>Analog, digital and mixed-signal electronics, instrumentation, signal processing, embedded control and hardware prototyping.</p>
+            <div class="pill-row"><span>Analog</span><span>DSP</span><span>Embedded</span></div>
+            <div class="card-glow"></div>
+          </article>
+
+          <article class="research-card reveal delay-1" tabindex="0">
+            <div class="card-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                <rect x="9" y="9" width="6" height="6"/>
+                <path d="M4 9h2M4 15h2M20 9h-2M20 15h-2M9 4v2M15 4v2M9 20v-2M15 20v-2"/>
+              </svg>
+            </div>
+            <div class="card-number">05</div>
+            <h3>FPGA &amp; Digital Systems</h3>
+            <p>Verilog-based digital design and Zynq-7000 development using Vivado and Vitis, including embedded software and programmable logic.</p>
+            <div class="pill-row"><span>Verilog</span><span>Vivado</span><span>Zynq</span></div>
+            <div class="card-glow"></div>
+          </article>
+
+          <article class="research-card reveal delay-2" tabindex="0">
+            <div class="card-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="card-number">06</div>
+            <h3>Emerging Technologies</h3>
+            <p>Current preparation in advanced FETs, low-power devices, emerging memories, 2D and other next-generation semiconductor concepts.</p>
+            <div class="pill-row"><span>2D Devices</span><span>Memory</span><span>Low Power</span></div>
+            <div class="card-glow"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <section class="section section-dark" id="projects">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="section-number">03</span>
+          <p class="kicker">SELECTED PROJECTS</p>
+          <h2>Things I have <em>built, measured &amp; tested.</em></h2>
+          <p class="section-intro">A mix of experimental research, electronic instrumentation, embedded control, signal processing and digital hardware.</p>
+        </div>
+        <div class="projects-grid">
+
+          <article class="project-card project-feature reveal" tabindex="0">
+            <div class="project-img-wrap">
+              <img src="assets/img1.jpg" alt="Environmental Test Chamber custom-built hardware showing ESP32 and sensors" loading="lazy" />
+              <div class="project-img-overlay"><span class="img-tag">Student Innovation Grant</span></div>
+            </div>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">01</span><span class="project-type">RESEARCH + INSTRUMENTATION</span></div>
+              <h3>Environmental Test Chamber</h3>
+              <p>Designed and developed an environmental controlled chamber through a <strong>Student Innovation Grant</strong>, combining temperature control, cooling/heating, humidity control, sensors, embedded electronics and closed-loop PID feedback.</p>
+              <div class="project-stack"><span>ESP32</span><span>Sensors</span><span>PID Control</span><span>Instrumentation</span><span>Hardware</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal delay-1" tabindex="0">
+            <div class="project-img-wrap">
+              <img src="assets/img2.jpg" alt="V2O5 thin film temperature sensor on silicon substrate under probe station" loading="lazy" />
+              <div class="project-img-overlay"><span class="img-tag">SIX SENSE Lab Research</span></div>
+            </div>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">04</span><span class="project-type">SENSOR + DEVICE</span></div>
+              <h3>V<sub>2</sub>O<sub>5</sub> Temperature Sensing</h3>
+              <p>Research work exploring V<sub>2</sub>O<sub>5</sub>-based temperature sensing and electronic measurement, connected to the broader device fabrication and characterization workflow at IISER Bhopal.</p>
+              <div class="project-stack"><span>V2O5</span><span>Sensors</span><span>Characterization</span><span>SMU</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal delay-2" tabindex="0">
+            <div class="project-img-wrap">
+              <img src="assets/img3.jpg" alt="Probe station for semiconductor device electrical characterization" loading="lazy" />
+              <div class="project-img-overlay"><span class="img-tag">Probe Station &#183; IISER Bhopal</span></div>
+            </div>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">05</span><span class="project-type">LAB EQUIPMENT</span></div>
+              <h3>Probe Station Characterization</h3>
+              <p>Electrical characterization of fabricated semiconductor devices using a manual probe station and SMU. I-V, R-T, and other measurements on thin-film and nano-scale samples.</p>
+              <div class="project-stack"><span>Probe Station</span><span>SMU</span><span>I-V Curves</span><span>R-T</span></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" tabindex="0">
+            <div class="project-img-wrap">
+              <img src="assets/img4.jpg" alt="Thin film deposition vacuum chamber system at IISER Bhopal" loading="lazy" />
+              <div class="project-img-overlay"><span class="img-tag">Deposition System &#183; IISER Bhopal</span></div>
+            </div>
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">06</span><span class="project-type">THIN FILM DEPOSITION</span></div>
+              <h3>Thin-Film Deposition</h3>
+              <p>Hands-on operation of thermal evaporation and deposition systems for thin-film material growth on substrates. Used for V<sub>2</sub>O<sub>5</sub> and metal contact fabrication.</p>
+              <div class="project-stack"><span>Thermal Evaporation</span><span>Vacuum</span><span>Deposition</span><span>Thin Film</span></div>
+            </div>
+          </article>
+
+          <article class="project-card project-soft reveal delay-1" tabindex="0">
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">02</span><span class="project-type">ELECTRONICS + DSP</span></div>
+              <h3>3-Band-Pass Hardware Equalizer</h3>
+              <p>A hardware equalizer project combining frequency-selective analog processing with MATLAB-based signal analysis and spectrogram visualization.</p>
+              <div class="project-stack"><span>Analog</span><span>DSP</span><span>MATLAB</span><span>Signal Processing</span></div>
+            </div>
+          </article>
+
+          <article class="project-card project-soft reveal delay-2" tabindex="0">
+            <div class="project-content">
+              <div class="project-top"><span class="project-index">03</span><span class="project-type">FPGA + EMBEDDED</span></div>
+              <h3>Zynq-7000 MultiBoot System</h3>
+              <p>Standalone MultiBoot embedded system using C and Verilog, combining programmable logic and software on a Zynq-7000 platform with MicroSD/FAT32 support.</p>
+              <div class="project-stack"><span>Zynq-7000</span><span>Verilog</span><span>Vivado</span><span>Vitis</span><span>C</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ LAB SECTION ═══ -->
+    <section class="section section-alt lab-section" id="lab">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="section-number">04</span>
+          <p class="kicker">RESEARCH LAB</p>
+          <h2>SIX SENSE Nanoscience <em>Laboratory</em></h2>
+          <p class="section-intro">Semiconductor device research, fabrication, and characterization at IISER Bhopal under Dr. Santanu Talukdar.</p>
+        </div>
+        <div class="lab-card reveal">
+          <div class="lab-card-content">
+            <div class="lab-info">
+              <div class="lab-logo-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+                </svg>
+              </div>
+              <div>
+                <h3>SIX SENSE Nanoscience Laboratory</h3>
+                <p>Indian Institute of Science Education and Research (IISER) Bhopal</p>
+                <p class="lab-pi">Principal Investigator: <strong>Dr. Santanu Talukdar</strong></p>
+              </div>
+            </div>
+            <div class="lab-capabilities">
+              <div class="lab-cap"><span class="cap-dot"></span> Substrate Preparation &amp; Cleaning</div>
+              <div class="lab-cap"><span class="cap-dot"></span> Photolithography &amp; Electro-Lithography</div>
+              <div class="lab-cap"><span class="cap-dot"></span> Laser Writing Lithography</div>
+              <div class="lab-cap"><span class="cap-dot"></span> Thin-Film Deposition (Thermal Evaporation)</div>
+              <div class="lab-cap"><span class="cap-dot"></span> Sensor Fabrication &amp; Testing</div>
+              <div class="lab-cap"><span class="cap-dot"></span> Probe Station Electrical Measurements</div>
+              <div class="lab-cap"><span class="cap-dot"></span> Source-Measure Unit (SMU) Characterization</div>
+              <div class="lab-cap"><span class="cap-dot"></span> V<sub>2</sub>O<sub>5</sub> Device Research</div>
+            </div>
+            <a href="https://sites.google.com/site/santanutalukderiiscnanoscience/home-1?pli=1&authuser=0"
+               target="_blank" rel="noreferrer" class="btn btn-primary lab-btn magnetic">
+              Visit Lab Website &#8599;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ EXPERIENCE ═══ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-number">05</span>
+          <p class="kicker">EXPERIENCE</p>
+          <h2>Hands-on work across<br><em>research, leadership &amp; building.</em></h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">RESEARCH &#183; 1.5+ YEARS</div>
+            <h3>Research Intern / Laboratory Researcher</h3>
+            <h4>SIX SENSE Laboratory, IISER Bhopal &#183; Under Dr. Santanu Talukdar</h4>
+            <p>Hands-on research in micro/nanoelectronics, semiconductor devices, sensors and experimental characterization. Experience across fabrication, processing, instrumentation and electrical measurement.</p>
+            <div class="timeline-tags"><span>Fabrication</span><span>Devices</span><span>Sensors</span><span>Characterization</span></div>
+          </article>
+          <article class="timeline-item reveal delay-1">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">LEADERSHIP &#183; IISER BHOPAL</div>
+            <h3>President, Student Activity Council</h3>
+            <h4>2025&#8211;2026</h4>
+            <p>Led the Student Activity Council and coordinated student activities and campus initiatives for a community of <strong>3000+ students</strong>.</p>
+          </article>
+          <article class="timeline-item reveal delay-2">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">LEADERSHIP &#183; FEST / STUDENT LIFE</div>
+            <h3>Head, AAROHAN Annual Student Fest</h3>
+            <p>Led the planning and execution of the annual student fest, coordinating teams, operations and cross-functional responsibilities.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">LEADERSHIP &#183; IIT MADRAS</div>
+            <h3>Head of Department, Highers Esports</h3>
+            <p>Leadership and team coordination in student activities at IIT Madras alongside academic and technical work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ EDUCATION ═══ -->
+    <section class="section section-alt" id="education">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="section-number">06</span>
+          <p class="kicker">EDUCATION</p>
+          <h2>Interdisciplinary by design.</h2>
+        </div>
+        <div class="education-grid">
+          <article class="education-card reveal">
+            <div class="edu-logo">IISERB</div>
+            <div>
+              <span class="edu-meta">2023 &#8212; PRESENT</span>
+              <h3>B.S. &#8212; Engineering Sciences</h3>
+              <p>Indian Institute of Science Education and Research Bhopal</p>
+              <strong>CPI: 7.58 / 10</strong>
+            </div>
+          </article>
+          <article class="education-card reveal delay-1">
+            <div class="edu-logo">IITM</div>
+            <div>
+              <span class="edu-meta">2023 &#8212; PRESENT</span>
+              <h3>B.S. &#8212; Electronic Systems</h3>
+              <p>Indian Institute of Technology Madras &#183; Online Degree Program</p>
+              <strong>Electronics &#183; Embedded &#183; Digital Systems</strong>
+            </div>
+          </article>
+          <article class="education-card reveal delay-2">
+            <div class="edu-logo">JEE</div>
+            <div>
+              <span class="edu-meta">2023</span>
+              <h3>JEE Advanced</h3>
+              <p>Joint Entrance Examination &#8212; Advanced</p>
+              <strong>Common Rank List: 6271</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SKILLS ═══ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="section-number">07</span>
+          <p class="kicker">TECHNICAL SKILLS</p>
+          <h2>A toolkit built around <em>hardware.</em></h2>
+          <p class="section-intro">Use the filters to explore the areas I work with most.</p>
+        </div>
+        <div class="skill-filters reveal" role="tablist" aria-label="Skill categories">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="semiconductor">Semiconductor</button>
+          <button class="filter-btn" data-filter="electronics">Electronics</button>
+          <button class="filter-btn" data-filter="digital">Digital / FPGA</button>
+          <button class="filter-btn" data-filter="software">Software</button>
+          <button class="filter-btn" data-filter="lab">Lab</button>
+        </div>
+        <div class="skills-list reveal" id="skillsList">
+          <span class="skill-chip" data-category="semiconductor">Semiconductor Devices</span>
+          <span class="skill-chip" data-category="semiconductor">Nanoelectronics</span>
+          <span class="skill-chip" data-category="semiconductor">Microelectronics</span>
+          <span class="skill-chip" data-category="semiconductor">Device Fabrication</span>
+          <span class="skill-chip" data-category="semiconductor">Device Characterization</span>
+          <span class="skill-chip" data-category="semiconductor">Lithography</span>
+          <span class="skill-chip" data-category="semiconductor">Electro-Lithography</span>
+          <span class="skill-chip" data-category="semiconductor">Laser Writing</span>
+          <span class="skill-chip" data-category="semiconductor">Thin-Film Deposition</span>
+          <span class="skill-chip" data-category="semiconductor">Sensor Fabrication</span>
+          <span class="skill-chip" data-category="semiconductor">MEMS</span>
+          <span class="skill-chip" data-category="semiconductor">Electronic Materials</span>
+          <span class="skill-chip" data-category="semiconductor">Semiconductor Process Technology</span>
+          <span class="skill-chip" data-category="semiconductor">Emerging Semiconductor Devices</span>
+          <span class="skill-chip" data-category="semiconductor">VLSI Design</span>
+          <span class="skill-chip" data-category="semiconductor">Device Modeling</span>
+          <span class="skill-chip" data-category="semiconductor">TCAD</span>
+          <span class="skill-chip" data-category="electronics">Analog Electronics</span>
+          <span class="skill-chip" data-category="electronics">Digital Electronics</span>
+          <span class="skill-chip" data-category="electronics">Mixed-Signal Electronics</span>
+          <span class="skill-chip" data-category="electronics">Signal Processing</span>
+          <span class="skill-chip" data-category="electronics">Digital Signal Processing</span>
+          <span class="skill-chip" data-category="electronics">Circuit Design</span>
+          <span class="skill-chip" data-category="electronics">PCB Prototyping</span>
+          <span class="skill-chip" data-category="electronics">Electronic Instrumentation</span>
+          <span class="skill-chip" data-category="electronics">Power Electronics</span>
+          <span class="skill-chip" data-category="electronics">RF Electronics</span>
+          <span class="skill-chip" data-category="electronics">Control Systems</span>
+          <span class="skill-chip" data-category="electronics">PID Control</span>
+          <span class="skill-chip" data-category="electronics">Hardware Prototyping</span>
+          <span class="skill-chip" data-category="digital">Embedded Systems</span>
+          <span class="skill-chip" data-category="digital">Embedded C</span>
+          <span class="skill-chip" data-category="digital">Microcontrollers</span>
+          <span class="skill-chip" data-category="digital">ESP32</span>
+          <span class="skill-chip" data-category="digital">Arduino</span>
+          <span class="skill-chip" data-category="digital">FPGA</span>
+          <span class="skill-chip" data-category="digital">Verilog</span>
+          <span class="skill-chip" data-category="digital">Vivado</span>
+          <span class="skill-chip" data-category="digital">Vitis</span>
+          <span class="skill-chip" data-category="digital">Zynq-7000</span>
+          <span class="skill-chip" data-category="digital">Embedded Linux</span>
+          <span class="skill-chip" data-category="software">C Programming</span>
+          <span class="skill-chip" data-category="software">Python</span>
+          <span class="skill-chip" data-category="software">MATLAB</span>
+          <span class="skill-chip" data-category="software">LTspice</span>
+          <span class="skill-chip" data-category="software">Mathematica</span>
+          <span class="skill-chip" data-category="software">Origin</span>
+          <span class="skill-chip" data-category="software">COMSOL Multiphysics</span>
+          <span class="skill-chip" data-category="software">Data Analysis</span>
+          <span class="skill-chip" data-category="software">Spectrogram Analysis</span>
+          <span class="skill-chip" data-category="lab">Probe Station</span>
+          <span class="skill-chip" data-category="lab">Source Measure Unit (SMU)</span>
+          <span class="skill-chip" data-category="lab">Electrical Measurements</span>
+          <span class="skill-chip" data-category="lab">Experimental Characterization</span>
+          <span class="skill-chip" data-category="lab">Laboratory Instrumentation</span>
+          <span class="skill-chip" data-category="lab">Soldering</span>
+          <span class="skill-chip" data-category="lab">3D Printing</span>
+          <span class="skill-chip" data-category="lab">Technical Documentation</span>
+          <span class="skill-chip" data-category="lab">Experimental Design</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ LAB WORKFLOW ═══ -->
+    <section class="section section-dark process-section">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <span class="section-number">08</span>
+          <p class="kicker">LAB WORKFLOW</p>
+          <h2>My typical path from <em>substrate to data.</em></h2>
+        </div>
+        <div class="process-line reveal">
+          <div class="process-step"><span>01</span><strong>Prepare</strong><small>Substrate / surface</small></div>
+          <div class="process-connector"></div>
+          <div class="process-step"><span>02</span><strong>Pattern</strong><small>Lithography / writing</small></div>
+          <div class="process-connector"></div>
+          <div class="process-step"><span>03</span><strong>Deposit</strong><small>Thin-film / material</small></div>
+          <div class="process-connector"></div>
+          <div class="process-step"><span>04</span><strong>Fabricate</strong><small>Device / sensor</small></div>
+          <div class="process-connector"></div>
+          <div class="process-step"><span>05</span><strong>Measure</strong><small>Probe / SMU</small></div>
+          <div class="process-connector"></div>
+          <div class="process-step"><span>06</span><strong>Analyze</strong><small>Data / model</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BEYOND THE BENCH ═══ -->
+    <section class="section section-alt" id="additional">
+      <div class="container two-col">
+        <div class="section-heading reveal">
+          <span class="section-number">09</span>
+          <p class="kicker">BEYOND THE BENCH</p>
+          <h2>Research is also<br><em>people, communication &amp; execution.</em></h2>
+        </div>
+        <div class="about-copy reveal delay-1">
+          <div class="mini-block">
+            <h3>Research &amp; innovation</h3>
+            <p>Student Innovation Grant recipient for the development of an environmental controlled test chamber and related sensing/control hardware.</p>
+          </div>
+          <div class="mini-block">
+            <h3>Leadership</h3>
+            <p>President of the Student Activity Council at IISER Bhopal; Head of AAROHAN; Head of Department at Highers Esports, IIT Madras.</p>
+          </div>
+          <div class="mini-block">
+            <h3>Working style</h3>
+            <p>Hands-on, curious, collaborative and comfortable learning unfamiliar equipment, tools and technical workflows quickly.</p>
+          </div>
+          <div class="mini-block">
+            <h3>Languages</h3>
+            <p>English &#183; Hindi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-card reveal">
+        <div>
+          <span class="kicker">LET'S CONNECT</span>
+          <h2>Have a research question,<br><em>project or opportunity?</em></h2>
+          <p>I am open to conversations around semiconductor research, electronics, device fabrication, experimental characterization, embedded hardware, FPGA systems, internships and thesis-oriented research.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="contact-link" href="mailto:sahilpandey12125@gmail.com"><span>Email</span><strong>sahilpandey12125@gmail.com</strong><b>&#8599;</b></a>
+          <a class="contact-link" href="mailto:pandey23@iiserb.ac.in"><span>Academic</span><strong>pandey23@iiserb.ac.in</strong><b>&#8599;</b></a>
+          <a class="contact-link" href="https://www.linkedin.com/in/sahilpandey12125" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/sahilpandey12125</strong><b>&#8599;</b></a>
+          <a class="contact-link" href="https://sites.google.com/site/santanutalukderiiscnanoscience/home-1?pli=1&authuser=0" target="_blank" rel="noreferrer"><span>Research Lab</span><strong>SIX SENSE Nanoscience Lab</strong><b>&#8599;</b></a>
+          <a class="contact-link" href="tel:+919869913448"><span>Phone</span><strong>+91 98699 13448</strong><b>&#8599;</b></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Sahil Ajay Pandey</strong>
+        <span>Semiconductor &#183; Electronics &#183; Research</span>
+      </div>
+      <div class="footer-right">
+        <a href="#top">Back to top &#8593;</a>
+        <span>&#169; <span id="year"></span> Sahil Ajay Pandey</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
