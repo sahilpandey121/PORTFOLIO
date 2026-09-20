@@ -1,41 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Sahil Ajay Pandey | Research CV</title>
-<style>
-@page { size: A4; margin: 15mm; }
-*{box-sizing:border-box} body{margin:0;background:#eef1f3;color:#151a20;font-family:Arial,Helvetica,sans-serif;line-height:1.42} .cv{width:210mm;max-width:100%;margin:24px auto;background:#fff;padding:15mm 15mm 13mm;box-shadow:0 10px 40px rgba(0,0,0,.12)} .top{border-bottom:2px solid #17222c;padding-bottom:12px;margin-bottom:14px}.name{font-size:29px;font-weight:800;letter-spacing:-.03em}.role{font-size:12px;color:#3d5965;margin-top:3px}.contact{font-size:9.5px;color:#5c6570;margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 12px}.section{margin-top:13px}.section h2{font-size:11px;letter-spacing:.14em;color:#1f7b63;border-bottom:1px solid #d8dfe2;padding-bottom:4px;margin:0 0 7px}.summary{font-size:10px;color:#3d4650}.grid2{display:grid;grid-template-columns:1.4fr .6fr;gap:18px}.item{margin-bottom:10px}.item-head{display:flex;justify-content:space-between;gap:12px;font-size:10.5px}.item-title{font-weight:700}.date{color:#66727d;font-size:9px;white-space:nowrap}.sub{font-size:9.5px;color:#56616d;margin:2px 0 4px}.bullets{margin:0;padding-left:15px;font-size:9.3px;color:#3d4650}.bullets li{margin:1.5px 0}.skills{font-size:9.5px;color:#3d4650}.skill-row{margin:3px 0}.label{font-weight:700;color:#1f2a33}.small{font-size:9px;color:#626c76}.print{position:fixed;right:18px;top:18px;border:0;background:#17222c;color:#fff;padding:9px 12px;border-radius:8px;cursor:pointer;font-weight:700}@media print{body{background:#fff}.cv{width:auto;margin:0;box-shadow:none;padding:0}.print{display:none}}@media(max-width:800px){.cv{padding:28px 18px}.grid2{grid-template-columns:1fr}.item-head{flex-direction:column;gap:0}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Ajay Pandey | Research CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 18mm 20mm;
+        }
+
+        :root {
+            --ink: #1a1a1a;
+            --muted: #555;
+            --accent: #1a4a7a;
+            --rule: #2a2a2a;
+            --bg: #f2f2ed;
+            --paper: #ffffff;
+            --serif: "EB Garamond", "Times New Roman", Georgia, serif;
+            --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--serif);
+            font-size: 10.8pt;
+            line-height: 1.52;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .cv-page {
+            width: 210mm;
+            max-width: 100%;
+            min-height: 297mm;
+            margin: 28px auto;
+            background: var(--paper);
+            padding: 20mm 22mm 18mm;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, .13), 0 1px 6px rgba(0, 0, 0, .08);
+            position: relative;
+        }
+
+        /* Header */
+        .cv-header {
+            text-align: center;
+            padding-bottom: 10pt;
+            margin-bottom: 11pt;
+            border-bottom: 1.8pt solid var(--rule);
+        }
+
+        .cv-name {
+            font-family: var(--serif);
+            font-size: 24pt;
+            font-weight: 700;
+            letter-spacing: .04em;
+            color: var(--ink);
+            margin-bottom: 3pt;
+        }
+
+        .cv-inst {
+            font-family: var(--sans);
+            font-size: 9.5pt;
+            color: var(--muted);
+            font-style: italic;
+            margin-bottom: 7pt;
+        }
+
+        .cv-contacts {
+            font-family: var(--sans);
+            font-size: 8.5pt;
+            color: var(--muted);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2pt 14pt;
+        }
+
+        .cv-contacts a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .cv-sep {
+            color: #bbb;
+        }
+
+        /* Sections */
+        .cv-section {
+            margin-top: 12pt;
+        }
+
+        .cv-stitle {
+            font-family: var(--serif);
+            font-size: 11pt;
+            font-weight: 700;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            color: var(--ink);
+            border-bottom: .8pt solid var(--rule);
+            padding-bottom: 2pt;
+            margin-bottom: 7pt;
+        }
+
+        /* Profile */
+        .cv-profile {
+            font-family: var(--serif);
+            font-size: 10.5pt;
+            color: var(--ink);
+            line-height: 1.62;
+            text-align: justify;
+        }
+
+        /* Entry */
+        .cv-entry {
+            margin-bottom: 9pt;
+        }
+
+        .cv-ehead {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8pt;
+        }
+
+        .cv-etitle {
+            font-family: var(--serif);
+            font-size: 10.8pt;
+            font-weight: 700;
+            color: var(--ink);
+            flex: 1;
+        }
+
+        .cv-edate {
+            font-family: var(--sans);
+            font-size: 8.5pt;
+            color: var(--muted);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .cv-esub {
+            font-family: var(--serif);
+            font-size: 10pt;
+            font-style: italic;
+            color: var(--muted);
+            margin: 1.5pt 0 3pt;
+        }
+
+        .cv-egrade {
+            font-family: var(--sans);
+            font-size: 9pt;
+            color: #333;
+            margin-top: 1.5pt;
+        }
+
+        /* Bullets */
+        .cv-bul {
+            margin: 3pt 0 0 12pt;
+            padding: 0;
+            list-style: none;
+        }
+
+        .cv-bul li {
+            font-family: var(--serif);
+            font-size: 10pt;
+            color: var(--ink);
+            line-height: 1.56;
+            margin-bottom: 2.5pt;
+            padding-left: 10pt;
+            position: relative;
+            text-align: justify;
+        }
+
+        .cv-bul li::before {
+            content: "\2013";
+            position: absolute;
+            left: 0;
+            color: var(--muted);
+        }
+
+        /* Skills */
+        .cv-skills {
+            font-family: var(--serif);
+            font-size: 10pt;
+            color: var(--ink);
+            line-height: 1.6;
+        }
+
+        .cv-srow {
+            display: flex;
+            gap: 6pt;
+            margin-bottom: 3pt;
+            align-items: baseline;
+        }
+
+        .cv-slabel {
+            font-weight: 700;
+            white-space: nowrap;
+            min-width: 108pt;
+            flex-shrink: 0;
+        }
+
+        .cv-slist {
+            color: #3a3a3a;
+        }
+
+        /* Interests */
+        .cv-ints {
+            font-family: var(--serif);
+            font-size: 10pt;
+            color: var(--ink);
+            line-height: 1.62;
+            text-align: justify;
+        }
+
+        /* Footer */
+        .cv-foot {
+            margin-top: 18pt;
+            border-top: .5pt solid #ccc;
+            padding-top: 5pt;
+            text-align: right;
+            font-family: var(--sans);
+            font-size: 7.5pt;
+            color: #bbb;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .toolbar button {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .tbtn-print {
+            background: #1a2030;
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+        }
+
+        .tbtn-print:hover {
+            background: #2a3050;
+        }
+
+        .tbtn-back {
+            background: rgba(255, 255, 255, .95);
+            color: #333;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+        }
+
+        .tbtn-back:hover {
+            background: #f0f0f0;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                font-size: 10.5pt;
+            }
+
+            .cv-page {
+                margin: 0;
+                box-shadow: none;
+                padding: 12mm 15mm;
+                width: 100%;
+                min-height: auto;
+            }
+
+            .toolbar {
+                display: none;
+            }
+        }
+
+        @media(max-width:800px) {
+            .cv-page {
+                padding: 22px 16px;
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: auto;
+            }
+
+            .cv-ehead {
+                flex-direction: column;
+                gap: 1pt;
+            }
+
+            .cv-srow {
+                flex-direction: column;
+                gap: 1pt;
+            }
+
+            .cv-slabel {
+                min-width: unset;
+            }
+
+            .toolbar {
+                position: fixed;
+                top: auto;
+                bottom: 14px;
+                right: 10px;
+                left: 10px;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<button class="print" onclick="window.print()">Print / Save PDF</button>
-<div class="cv">
-<div class="top"><div class="name">Sahil Ajay Pandey</div><div class="role">Engineering Sciences — IISER Bhopal | B.S. Electronic Systems — IIT Madras</div><div class="contact"><span>sahilpandey12125@gmail.com</span><span>pandey23@iiserb.ac.in</span><span>+91 98699 13448</span><span>linkedin.com/in/sahilpandey12125</span></div></div>
-<div class="section"><h2>PROFILE</h2><div class="summary">Engineering Sciences student at IISER Bhopal and B.S. Electronic Systems student at IIT Madras with 1.5+ years of hands-on research experience in semiconductor devices, fabrication, sensors, electronics and experimental characterization. Experienced across lithography, electro-lithography, laser writing, thin-film deposition, sensor fabrication, probe-station measurements and SMU-based electrical characterization. Skilled in COMSOL Multiphysics, MATLAB, LTspice, Mathematica, Origin, Python, C, Embedded C, Verilog, Vivado and Vitis, with practical experience in embedded systems, FPGA development, electronic instrumentation and hardware prototyping.</div></div>
-<div class="section"><h2>RESEARCH INTERESTS</h2><div class="skills">Semiconductor Devices, Nanoelectronics, Microelectronics, Device Fabrication and Characterization, Electronic Materials and Devices, Sensors and MEMS, Analog and Digital Electronics, Mixed-Signal Electronics, Embedded Hardware, FPGA Systems, Electronic Instrumentation, Device Modeling, Emerging Semiconductor Technologies.</div></div>
-<div class="section"><h2>EDUCATION</h2>
-<div class="item"><div class="item-head"><div class="item-title">B.S. — Engineering Sciences, IISER Bhopal</div><div class="date">2023 — Present</div></div><div class="sub">CPI: 7.58 / 10</div></div>
-<div class="item"><div class="item-head"><div class="item-title">B.S. — Electronic Systems, IIT Madras</div><div class="date">2023 — Present</div></div><div class="sub">Online Degree Program</div></div>
-<div class="item"><div class="item-head"><div class="item-title">JEE Advanced 2023</div><div class="date">CRL 6271</div></div></div>
-</div>
-<div class="section"><h2>RESEARCH EXPERIENCE</h2>
-<div class="item"><div class="item-head"><div class="item-title">Research Intern / Laboratory Researcher — SIX SENSE Laboratory, IISER Bhopal</div><div class="date">1.5+ years</div></div><div class="sub">Under Dr. Santanu Talukdar · Micro/Nanoelectronics, Semiconductor Devices, Sensors</div><ul class="bullets"><li>Hands-on work across substrate preparation, lithography, electro-lithography, laser writing, thin-film deposition, sensor fabrication and electrical characterization.</li><li>Used probe station and source-measure unit (SMU) for device and sensor measurements and experimental characterization.</li><li>Worked with semiconductor/device simulation and analysis tools including COMSOL Multiphysics, MATLAB, LTspice, Mathematica and Origin.</li><li>Research exposure includes V2O5-based temperature sensing and electronic measurement systems.</li></ul></div></div>
-<div class="section"><h2>SELECTED PROJECTS</h2>
-<div class="item"><div class="item-head"><div class="item-title">Environmental Controlled Test Chamber — Student Innovation Grant</div></div><ul class="bullets"><li>Developed temperature/humidity control hardware using sensors, embedded electronics, feedback control and instrumentation.</li></ul></div>
-<div class="item"><div class="item-head"><div class="item-title">3-Band-Pass Hardware Equalizer + DSP</div></div><ul class="bullets"><li>Designed hardware frequency-selective processing and used MATLAB for signal analysis and spectrogram visualization.</li></ul></div>
-<div class="item"><div class="item-head"><div class="item-title">Zynq-7000 Standalone MultiBoot System</div></div><ul class="bullets"><li>Implemented an embedded MultiBoot system using C, Verilog, Vivado and Vitis with MicroSD/FAT32 support.</li></ul></div>
-<div class="item"><div class="item-head"><div class="item-title">V2O5 Temperature Sensor and Electronic Measurement System</div></div></div>
-</div>
-<div class="section"><h2>TECHNICAL SKILLS</h2>
-<div class="skill-row"><span class="label">Semiconductor:</span> Device Physics, Semiconductor Devices, Nanoelectronics, Microelectronics, Device Fabrication, Device Characterization, Lithography, Electro-Lithography, Laser Writing, Thin-Film Deposition, Sensor Fabrication, MEMS, TCAD, Device Modeling, VLSI.</div>
-<div class="skill-row"><span class="label">Electronics:</span> Analog Electronics, Digital Electronics, Mixed-Signal Electronics, Signal Processing, DSP, Circuit Design, PCB Prototyping, Electronic Instrumentation, Control Systems, PID Control, RF Electronics, Power Electronics, Hardware Prototyping.</div>
-<div class="skill-row"><span class="label">Digital / Embedded:</span> Embedded Systems, Embedded C, Microcontrollers, ESP32, Arduino, FPGA, Verilog, Vivado, Vitis, Zynq-7000, Embedded Linux.</div>
-<div class="skill-row"><span class="label">Software / Analysis:</span> C, Python, MATLAB, LTspice, Mathematica, Origin, COMSOL Multiphysics, Data Analysis, Spectrogram Analysis.</div>
-<div class="skill-row"><span class="label">Laboratory:</span> Probe Station, SMU, Electrical Measurements, Experimental Characterization, Laboratory Instrumentation, Soldering, 3D Printing, Experimental Design.</div>
-</div>
-<div class="section"><h2>LEADERSHIP &amp; INNOVATION</h2><ul class="bullets"><li>President, Student Activity Council (SAC), IISER Bhopal — 2025–2026; coordinated student activities and campus initiatives for 3000+ students.</li><li>Head, AAROHAN Annual Student Fest, IISER Bhopal.</li><li>Head of Department, Highers Esports, IIT Madras.</li><li>Student Innovation Grant recipient for environmental controlled chamber development.</li></ul></div>
-<div class="section"><h2>LABORATORY EQUIPMENT &amp; TOOLS</h2><div class="skills">Probe Station, SMU, deposition systems, electro-lithography machine, laser writer, soldering station, 3D printer, electronic test/instrumentation equipment, MATLAB, COMSOL Multiphysics, LTspice, Mathematica, Origin, Vivado, Vitis.</div></div>
-<div class="section"><h2>LANGUAGES</h2><div class="skills">English, Hindi</div></div>
-</div>
-</body></html>
+
+    <div class="toolbar">
+        <button class="tbtn-back" onclick="window.history.back();">&#8592; Back</button>
+        <button class="tbtn-print" onclick="window.print();">&#128438; Print / Save PDF</button>
+    </div>
+
+    <div class="cv-page">
+
+        <!-- Header -->
+        <div class="cv-header">
+            <div class="cv-name">Sahil Ajay Pandey</div>
+            <div class="cv-inst">B.S. Engineering Sciences, IISER Bhopal &ensp;&middot;&ensp; B.S. Electronic Systems,
+                IIT Madras</div>
+            <div class="cv-contacts">
+                <span><a href="mailto:sahilpandey12125@gmail.com">sahilpandey12125@gmail.com</a></span>
+                <span class="cv-sep">|</span>
+                <span><a href="mailto:pandey23@iiserb.ac.in">pandey23@iiserb.ac.in</a></span>
+                <span class="cv-sep">|</span>
+                <span>+91&nbsp;98699&nbsp;13448</span>
+                <span class="cv-sep">|</span>
+                <span><a href="https://www.linkedin.com/in/sahilpandey12125"
+                        target="_blank">linkedin.com/in/sahilpandey12125</a></span>
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="cv-section">
+            <div class="cv-stitle">Profile</div>
+            <div class="cv-profile">
+                Engineering Sciences student at IISER Bhopal and B.S. Electronic Systems student at IIT Madras
+                with 1.5+ years of hands-on research experience in semiconductor devices, fabrication, sensors,
+                electronics and experimental characterization. Experienced across lithography, electro-lithography,
+                laser writing, thin-film deposition, sensor fabrication, probe-station measurements and SMU-based
+                electrical characterization. Skilled in COMSOL Multiphysics, MATLAB, LTspice, Mathematica, Origin,
+                Python, C, Embedded C, Verilog, Vivado and Vitis, with practical experience in embedded systems,
+                FPGA development, electronic instrumentation and hardware prototyping.
+            </div>
+        </div>
+
+        <!-- Research Interests -->
+        <div class="cv-section">
+            <div class="cv-stitle">Research Interests</div>
+            <div class="cv-ints">
+                Semiconductor Devices &amp; Device Physics &middot; Nanoelectronics &middot; Microelectronics &middot;
+                Device Fabrication and Characterization &middot; Electronic Materials and Devices &middot;
+                Sensors and MEMS &middot; Analog and Mixed-Signal Electronics &middot; Embedded Hardware &middot;
+                FPGA Systems &middot; Electronic Instrumentation &middot; Device Modeling &middot;
+                Emerging Semiconductor Technologies.
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="cv-section">
+            <div class="cv-stitle">Education</div>
+
+            <div class="cv-entry">
+                <div class="cv-ehead">
+                    <div class="cv-etitle">Indian Institute of Science Education and Research (IISER), Bhopal</div>
+                    <div class="cv-edate">2023 &ndash; Present</div>
+                </div>
+                <div class="cv-esub">B.S. &mdash; Engineering Sciences</div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-ehead">
+                    <div class="cv-etitle">Indian Institute of Technology (IIT), Madras</div>
+                    <div class="cv-edate">2023 &ndash; Present</div>
+                </div>
+                <div class="cv-esub">B.S. &mdash; Electronic Systems &ensp;(Online Degree Program)</div>
+                <div class="cv-egrade">Focus: Electronics &middot; Embedded Systems &middot; Digital Systems</div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-ehead">
+                    <div class="cv-etitle">JEE Advanced 2023 &mdash; Joint Entrance Examination (Advanced)</div>
+                    <div class="cv-edate">2023</div>
+                </div>
+                <div class="cv-egrade">Common Rank List (CRL): 6271</div>
+            </div>
+        </div>
+
+        <!-- Research Experience -->
+        <div class="cv-section">
+            <div class="cv-stitle">Research Experience</div>
+
+            <div class="cv-entry">
+                <div class="cv-ehead">
+                    <div class="cv-etitle">Research Intern / Laboratory Researcher</div>
+                    <div class="cv-edate">1.5+ years</div>
+                </div>
+                <div class="cv-esub">
+                    SIX SENSE Nanoscience Laboratory, IISER Bhopal &ensp;&middot;&ensp;
+                    Under Dr.&thinsp;Santanu Talukdar &ensp;&middot;&ensp;
+                    Micro/Nanoelectronics, Semiconductor Devices, Sensors
+                </div>
+                <ul class="cv-bul">
+                    <li>Hands-on work across substrate preparation, lithography, electro-lithography, laser writing,
+                        thin-film deposition, sensor fabrication and electrical characterization.</li>
+                    <li>Operated probe station and source-measure unit (SMU) for device and sensor electrical
+                        measurements and experimental characterization.</li>
+                    <li>Used semiconductor device simulation and analysis tools including COMSOL Multiphysics, MATLAB,
+                        LTspice, Mathematica and Origin for modelling, simulation and data analysis.</li>
+                    <li>Research exposure includes V<sub>2</sub>O<sub>5</sub>-based temperature sensing, thin-film
+                        device
+                        fabrication and electronic measurement system design.</li>
+                    <li>Developed an environmental controlled test chamber (Student Innovation Grant) integrating
+                        embedded electronics, PID control, sensors and instrumentation hardware.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Selected Projects -->
+        <div class="cv-section">
+            <div class="cv-stitle">Selected Projects</div>
+
+            <div class="cv-entry">
+                <div class="cv-ehead">
+                    <div class="cv-etitle">Environmental Controlled Test Chamber &ensp;&mdash; Student Innovation Grant
+                    </div>
+                </div>
+                <ul class="cv-bul">
+                    <li>Designed and built a precision environmental chamber with closed-loop temperature and humidity
+                        control, Peltier elements, embedded sensing and PID feedback using ESP32.</li>
+                </ul>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-ehead">
+                    <div class="cv-etitle">3-Band-Pass Hardware Equalizer with DSP Analysis</div>
+                </div>
+                <ul class="cv-bul">
+                    <li>Designed a hardware frequency-selective analog equalizer; performed signal analysis and
+                        spectrogram visualization using MATLAB.</li>
+                </ul>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-ehead">
+                    <div class="cv-etitle">Zynq-7000 Standalone MultiBoot Embedded System</div>
+                </div>
+                <ul class="cv-bul">
+                    <li>Implemented a standalone MultiBoot system combining Verilog programmable logic and embedded C
+                        software on a Zynq-7000 platform using Vivado, Vitis and MicroSD/FAT32 support.</li>
+                </ul>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-ehead">
+                    <div class="cv-etitle">V<sub>2</sub>O<sub>5</sub> Temperature Sensor and Electronic Measurement
+                        System</div>
+                </div>
+                <ul class="cv-bul">
+                    <li>Research work on vanadium pentoxide thin-film temperature sensing, electrical characterization
+                        via probe station and SMU, and electronic measurement system design.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="cv-section">
+            <div class="cv-stitle">Technical Skills</div>
+            <div class="cv-skills">
+                <div class="cv-srow">
+                    <span class="cv-slabel">Semiconductor:</span>
+                    <span class="cv-slist">Device Physics, Semiconductor Devices, Nanoelectronics, Microelectronics,
+                        Device Fabrication, Device Characterization, Lithography, Electro-Lithography, Laser Writing,
+                        Thin-Film Deposition, Sensor Fabrication, MEMS, TCAD, Device Modeling, VLSI Design.</span>
+                </div>
+                <div class="cv-srow">
+                    <span class="cv-slabel">Electronics:</span>
+                    <span class="cv-slist">Analog Electronics, Digital Electronics, Mixed-Signal Electronics, Signal
+                        Processing, DSP, Circuit Design, PCB Prototyping, Electronic Instrumentation, Control Systems,
+                        PID Control, RF Electronics, Power Electronics, Hardware Prototyping.</span>
+                </div>
+                <div class="cv-srow">
+                    <span class="cv-slabel">Digital / Embedded:</span>
+                    <span class="cv-slist">Embedded Systems, Embedded C, Microcontrollers, ESP32, Arduino, FPGA,
+                        Verilog, Vivado, Vitis, Zynq-7000, Embedded Linux.</span>
+                </div>
+                <div class="cv-srow">
+                    <span class="cv-slabel">Software / Analysis:</span>
+                    <span class="cv-slist">C, Python, MATLAB, LTspice, Mathematica, Origin, COMSOL Multiphysics,
+                        Data Analysis, Spectrogram Analysis.</span>
+                </div>
+                <div class="cv-srow">
+                    <span class="cv-slabel">Laboratory:</span>
+                    <span class="cv-slist">Probe Station, SMU, Thin-Film Deposition System, Electro-Lithography
+                        Machine, Laser Writer, Soldering, 3D Printing, Electronic Test &amp; Measurement
+                        Equipment.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leadership -->
+        <div class="cv-section">
+            <div class="cv-stitle">Leadership &amp; Positions of Responsibility</div>
+            <ul class="cv-bul">
+                <li>
+                    <strong>President, Student Activity Council (SAC), IISER Bhopal</strong> (2025&ndash;2026)
+                    &mdash; Led student activities and campus initiatives for a community of 3000+ students.
+                </li>
+                <li>
+                    <strong>Head, AAROHAN Annual Student Fest, IISER Bhopal</strong>
+                    &mdash; Led planning, execution and cross-functional coordination of the annual student fest.
+                </li>
+                <li>
+                    <strong>Head of Department, Highers Esports, IIT Madras</strong>
+                    &mdash; Leadership and team coordination alongside academic and technical work.
+                </li>
+                <li>
+                    <strong>Student Innovation Grant Recipient</strong>
+                    &mdash; Funded project for development of an environmental controlled test chamber with sensing
+                    and embedded control hardware.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Languages -->
+        <div class="cv-section">
+            <div class="cv-stitle">Languages</div>
+            <div class="cv-ints">English (proficient) &ensp;&middot;&ensp; Hindi (native)</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="cv-foot">
+            Last updated &mdash; 2026 &ensp;&middot;&ensp; Sahil Ajay Pandey
+        </div>
+
+    </div>
+</body>
+
+</html>
